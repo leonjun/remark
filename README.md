@@ -87,6 +87,24 @@ proxyTable: {
 git ssh-keygen -t rsa -C "我的SSH密钥"
 #去掉路径#号
 mode: "history",
+#转换字体图标
+https://transfonter.org/
+#css三角形
+display: inline-block;
+content: " ";
+height: 18rpx;
+width: 18rpx;
+border-width: 4rpx 4rpx 0 0;
+border-color: #c7c7cc;
+border-style: solid;
+#小程序
+navigateBack   {delta：层数} 关闭当前页面返回
+redirectTo 关闭当前页面跳转 非tabbar
+navigateTo 保留当前页面跳转 非tabbar
+relanuch 关闭所有页面跳转
+
+
+
 ```
 ##数据库笔记
 ``` bash
