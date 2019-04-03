@@ -17,24 +17,20 @@ vue-cli安装
 > A Vue.js project
 
 
-## 笔记
+## vue笔记
 
 ``` bash
 #vue cli3.0文档
 https://cli.vuejs.org/guide/
 
-
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080  启动
-npm run dev
-
-# build for production with minification   打包
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+#创建vue-ant项目
+#vue-ant地址 https://vue.ant.design
+npm install -g @vue/cli
+vue create xxx
+npm i --save ant-design-vue
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+Vue.use(Antd)
 
 
 ###笔记
@@ -66,29 +62,33 @@ import 'mint-ui/lib/style.css'
 Vue.use(MintUI);
 需要禁用客户端的放大缩小  user-scalable=0
 
-#resource跨域 config目录下index.js  （3.0 vue.config.js）
 
+
+#axios跨域 vue.config.js
 module.exports = {
-  dev: {
-  新增
-  
-proxyTable: {
-      '/api': {
-        target: 'http://v.juhe.cn', 
-        // secure: false,  // 如果是https接口，需要配置这个参数
-        changeOrigin: true, // 如果接口跨域，需要进行这个参数配置
-        pathRewrite: {
-          '^/api': ''
+    devServer: {
+        //port: 8080,
+        proxy: {
+            '/api': {
+                target: 'https://www.apiopen.top/',  // target host
+                //ws: true,  // proxy websockets 
+                changeOrigin: true,  // needed for virtual hosted sites
+                pathRewrite: {
+                    '^/api': ''  
+                }
+            },
         }
-      }
-    },
+    }
+};
 
 #如遇无法git
 git ssh-keygen -t rsa -C "我的SSH密钥"
 #去掉路径#号
 mode: "history",
-#转换字体图标
-https://transfonter.org/
+
+```
+##css笔记
+```bash
 #css三角形
 display: inline-block;
 content: " ";
@@ -97,13 +97,18 @@ width: 18rpx;
 border-width: 4rpx 4rpx 0 0;
 border-color: #c7c7cc;
 border-style: solid;
+background: linear-gradient(#ad6e01,#e79302);#渐变
+
+```
+##小程序笔记
+```bash
+#转换字体图标
+https://transfonter.org/
 #小程序
 navigateBack   {delta：层数} 关闭当前页面返回
 redirectTo 关闭当前页面跳转 非tabbar
 navigateTo 保留当前页面跳转 非tabbar
 relanuch 关闭所有页面跳转
-
-
 
 ```
 ##数据库笔记
@@ -114,8 +119,8 @@ alter table 表名 add 字段名 类型
 alter table 表名 drop column 字段名
 #修改表名
 alter table table_name rename table_new_name;
-#排序
-order by 键 desc
+#查询排序
+select * from xxx(表名) order by 键 desc
 #删除某条数据
 delete from table where  key='' 
 ```
