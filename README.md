@@ -124,6 +124,10 @@ select * from xxx(表名) order by 键 desc
 #删除某条数据
 delete from table where  key='' 
 ```
-
+##react
+```
+npm install -g create-react-app
+create-react-app hello-react
+```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
