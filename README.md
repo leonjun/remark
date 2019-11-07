@@ -45,6 +45,11 @@ npm install --save swiper
 npm install --save-dev sass-loader
 npm install --save-dev node-sass
 
+
+#stylus
+cnpm install stylus --save-dev
+cnpm install stylus-loader --save-dev
+
 #webpack.base.conf.js的rules里面添加配置
 {
   test: /\.sass$/,

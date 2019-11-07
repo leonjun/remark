@@ -3,9 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import live2d4vue from 'live2d4vue'
+
+
 
 Vue.config.productionTip = false
-
+Vue.use(live2d4vue)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

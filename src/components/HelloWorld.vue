@@ -1,5 +1,12 @@
 <template>
   <div class="hello">
+    
+    <ul>
+      <li>
+        <a href="">asdfasdf</a>
+      </li>
+    </ul>
+    <a>adfasdf</a>
     <!-- slots start -->
     <Slots>
       <template slot="header">
@@ -32,13 +39,21 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      mdata: {
+        name: "live2d", // 模型名称
+        model: "@/assets/live2d/model/tia/model.moc", // 模型文件地址
+        textures: [
+             "@/assets/live2d/model/tia/textures/default-costume.png", // 材质素材地址
+        ]
+    },
       msg: 'Welcome to Your Vue.js App'
     }
   },
   methods:{
     change(){
       this.msg="";
-    }
+    },
+    
   },
   mounted(){
     this.$nextTick(()=>{
@@ -49,19 +64,23 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="stylus">
 h1, h2 {
   font-weight: normal;
 }
 ul {
-  list-style-type: none;
-  padding: 0;
+  list-style-type none 
+  padding 0
 }
 li {
-  display: inline-block;
-  margin: 0 10px;
+  display inline-block
+  margin 0 10px
+  a{
+    color red
+    text-decoration none
+  }
 }
 a {
-  color: #42b983;
+  
 }
 </style>
